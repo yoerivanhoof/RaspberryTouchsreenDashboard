@@ -1,0 +1,1 @@
+-lmingw32 -mwindows D:/C++/SDL2-2.0.10/x86_64-w64-mingw32/lib/libSDL2main.a D:/C++/SDL2-2.0.10/x86_64-w64-mingw32/lib/libSDL2.dll.a D:/C++/SDL2_image-2.0.5/x86_64-w64-mingw32/lib/libSDL2_image.dll.a D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib/libSDL2_ttf.dll.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
