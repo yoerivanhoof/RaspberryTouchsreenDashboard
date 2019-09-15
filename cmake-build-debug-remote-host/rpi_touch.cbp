@@ -92,6 +92,18 @@
 		<Unit filename="/tmp/tmp.lojG6PrtMh/Button.h">
 			<Option target="rpi_touch"/>
 		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/DisplayGrid.cpp">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/DisplayGrid.h">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/DisplayGridItem.cpp">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/DisplayGridItem.h">
+			<Option target="rpi_touch"/>
+		</Unit>
 		<Unit filename="/tmp/tmp.lojG6PrtMh/Texture.cpp">
 			<Option target="rpi_touch"/>
 		</Unit>
@@ -102,6 +114,18 @@
 			<Option target="rpi_touch"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.lojG6PrtMh/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/lazy.ttf">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/touch_down.png">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/touch_motion.png">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.lojG6PrtMh/touch_up.png">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.lojG6PrtMh/cmake/FindSDL2.cmake">

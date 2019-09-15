@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/tmp/tmp.lojG6PrtMh/Button.cpp" "/tmp/tmp.lojG6PrtMh/cmake-build-debug-remote-host/CMakeFiles/rpi_touch.dir/Button.cpp.o"
+  "/tmp/tmp.lojG6PrtMh/DisplayGrid.cpp" "/tmp/tmp.lojG6PrtMh/cmake-build-debug-remote-host/CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.o"
+  "/tmp/tmp.lojG6PrtMh/DisplayGridItem.cpp" "/tmp/tmp.lojG6PrtMh/cmake-build-debug-remote-host/CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.o"
   "/tmp/tmp.lojG6PrtMh/Texture.cpp" "/tmp/tmp.lojG6PrtMh/cmake-build-debug-remote-host/CMakeFiles/rpi_touch.dir/Texture.cpp.o"
   "/tmp/tmp.lojG6PrtMh/main.cpp" "/tmp/tmp.lojG6PrtMh/cmake-build-debug-remote-host/CMakeFiles/rpi_touch.dir/main.cpp.o"
   )

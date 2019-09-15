@@ -98,11 +98,41 @@ CMakeFiles/rpi_touch.dir/Button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpi_touch.dir/Button.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\TheRiverVan\CLionProjects\rpi-touch\Button.cpp -o CMakeFiles\rpi_touch.dir\Button.cpp.s
 
+CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj: CMakeFiles/rpi_touch.dir/flags.make
+CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj: CMakeFiles/rpi_touch.dir/includes_CXX.rsp
+CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj: ../DisplayGrid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TheRiverVan\CLionProjects\rpi-touch\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\rpi_touch.dir\DisplayGrid.cpp.obj -c C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGrid.cpp
+
+CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGrid.cpp > CMakeFiles\rpi_touch.dir\DisplayGrid.cpp.i
+
+CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGrid.cpp -o CMakeFiles\rpi_touch.dir\DisplayGrid.cpp.s
+
+CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj: CMakeFiles/rpi_touch.dir/flags.make
+CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj: CMakeFiles/rpi_touch.dir/includes_CXX.rsp
+CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj: ../DisplayGridItem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TheRiverVan\CLionProjects\rpi-touch\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\rpi_touch.dir\DisplayGridItem.cpp.obj -c C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGridItem.cpp
+
+CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGridItem.cpp > CMakeFiles\rpi_touch.dir\DisplayGridItem.cpp.i
+
+CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\TheRiverVan\CLionProjects\rpi-touch\DisplayGridItem.cpp -o CMakeFiles\rpi_touch.dir\DisplayGridItem.cpp.s
+
 # Object files for target rpi_touch
 rpi_touch_OBJECTS = \
 "CMakeFiles/rpi_touch.dir/main.cpp.obj" \
 "CMakeFiles/rpi_touch.dir/Texture.cpp.obj" \
-"CMakeFiles/rpi_touch.dir/Button.cpp.obj"
+"CMakeFiles/rpi_touch.dir/Button.cpp.obj" \
+"CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj" \
+"CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj"
 
 # External object files for target rpi_touch
 rpi_touch_EXTERNAL_OBJECTS =
@@ -110,6 +140,8 @@ rpi_touch_EXTERNAL_OBJECTS =
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/main.cpp.obj
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/Texture.cpp.obj
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/Button.cpp.obj
+rpi_touch.exe: CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj
+rpi_touch.exe: CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/build.make
 rpi_touch.exe: D:/C++/SDL2-2.0.10/x86_64-w64-mingw32/lib/libSDL2main.a
 rpi_touch.exe: D:/C++/SDL2-2.0.10/x86_64-w64-mingw32/lib/libSDL2.dll.a
@@ -118,7 +150,7 @@ rpi_touch.exe: D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib/libSDL2_ttf.dll.a
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/linklibs.rsp
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/objects1.rsp
 rpi_touch.exe: CMakeFiles/rpi_touch.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\TheRiverVan\CLionProjects\rpi-touch\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable rpi_touch.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\TheRiverVan\CLionProjects\rpi-touch\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rpi_touch.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\rpi_touch.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

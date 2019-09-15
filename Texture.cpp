@@ -3,6 +3,7 @@
 //
 
 
+#include <iostream>
 #include "Texture.h"
 
 
@@ -103,17 +104,13 @@ bool Texture::loadFromFile( std::string path )
     return mTexture != NULL;
 }
 
-bool Texture::loadFromRenderedText( std::string textureText, SDL_Color textColor )
+bool Texture::loadFromRenderedText( std::string textureText,  TTF_Font& font, SDL_Color textColor )
 {
 	//Get rid of preexisting texture
 	free();
-    gFont = TTF_OpenFont( "lazy.ttf", 50 );
-    if(gFont == NULL){
-        SDL_Log( "kan lazy nie lade" );
-    }
 
 	//Render text surface
-	SDL_Surface* textSurface = TTF_RenderText_Solid( gFont, textureText.c_str(), textColor );
+	textSurface = TTF_RenderText_Blended_Wrapped( &font, textureText.c_str(), textColor,240 );
 	if( textSurface != NULL )
 	{
 		//Create texture from surface pixels
@@ -144,8 +141,14 @@ bool Texture::loadFromRenderedText( std::string textureText, SDL_Color textColor
 
 bool Texture::createBlank( int width, int height, SDL_TextureAccess access )
 {
+    if(mTexture != NULL){
+        SDL_DestroyTexture( mTexture );
+        mTexture = NULL;
+    }
+
+
     //Create uninitialized texture
-    mTexture = SDL_CreateTexture( gRenderer, SDL_PIXELFORMAT_RGBA8888, access, width, height );
+    mTexture = SDL_CreateTexture( gRenderer, SDL_PIXELFORMAT_RGBA32, access, width, height );
     if( mTexture == NULL )
     {
         SDL_Log( "Unable to create blank texture! SDL Error: %s\n", SDL_GetError() );
@@ -165,6 +168,9 @@ void Texture::free()
     if( mTexture != NULL )
     {
         SDL_DestroyTexture( mTexture );
+        gFont = NULL;
+
+        textSurface = NULL;
         mTexture = NULL;
         mWidth = 0;
         mHeight = 0;
@@ -176,7 +182,10 @@ void Texture::free()
 void Texture::setColor( Uint8 red, Uint8 green, Uint8 blue )
 {
     //Modulate texture rgb
-    SDL_SetTextureColorMod( mTexture, red, green, blue );
+    if(-1 ==SDL_SetTextureColorMod( mTexture, 100, 100, 100 )){
+        SDL_Log("texure color not supported");
+    }
+    std::cout<<"r "<<red<<" g"<<green<<" b"<<blue<<"\n";
 }
 
 void Texture::setBlendMode( SDL_BlendMode blending )

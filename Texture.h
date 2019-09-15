@@ -23,7 +23,7 @@ public:
     bool loadFromFile( std::string path );
 
 
-    bool loadFromRenderedText( std::string textureText, SDL_Color textColor );
+    bool loadFromRenderedText( std::string textureText,TTF_Font& font, SDL_Color textColor );
 
 
     //Creates blank texture
@@ -60,6 +60,7 @@ public:
     Uint32 getPixel32( unsigned int x, unsigned int y );
 
 private:
+    SDL_Surface* textSurface;
     SDL_Renderer* gRenderer;
     //The actual hardware texture
     SDL_Texture* mTexture;

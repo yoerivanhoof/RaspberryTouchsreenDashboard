@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.cpp
+Button.h
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.h
+
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.h
+Texture.h
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.h
+
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.cpp
+Texture.h
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.h
+
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.h
+SDL_render.h
+-
+string
+-
+SDL_image.h
+-
+SDL_ttf.h
+-
+
 C:/Users/TheRiverVan/CLionProjects/rpi-touch/main.cpp
 SDL.h
 -
@@ -17,6 +39,10 @@ string
 -
 string.h
 -
+Texture.h
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.h
+Button.h
+C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.h
 
 D:/C++/SDL2-2.0.10/x86_64-w64-mingw32/include/SDL2/SDL.h
 SDL_main.h
@@ -631,4 +657,12 @@ begin_code.h
 D:/C++/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2/begin_code.h
 close_code.h
 D:/C++/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2/close_code.h
+
+D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/SDL_ttf.h
+SDL.h
+D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/SDL.h
+begin_code.h
+D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/begin_code.h
+close_code.h
+D:/C++/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/close_code.h
 

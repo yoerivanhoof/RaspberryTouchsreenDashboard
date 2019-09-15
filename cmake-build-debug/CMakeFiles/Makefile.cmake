@@ -47,6 +47,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../cmake/FindSDL2.cmake"
   "../cmake/FindSDL2_image.cmake"
   "../cmake/FindSDL2_ttf.cmake"
+  "../lazy.ttf"
+  "../touch_down.png"
+  "../touch_motion.png"
+  "../touch_up.png"
   )
 
 # The corresponding makefile is:
@@ -57,6 +61,10 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "touch_down.png"
+  "touch_motion.png"
+  "touch_up.png"
+  "lazy.ttf"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

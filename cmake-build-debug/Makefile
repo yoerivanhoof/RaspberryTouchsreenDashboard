@@ -149,6 +149,60 @@ Button.cpp.s:
 	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/Button.cpp.s
 .PHONY : Button.cpp.s
 
+DisplayGrid.obj: DisplayGrid.cpp.obj
+
+.PHONY : DisplayGrid.obj
+
+# target to build an object file
+DisplayGrid.cpp.obj:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj
+.PHONY : DisplayGrid.cpp.obj
+
+DisplayGrid.i: DisplayGrid.cpp.i
+
+.PHONY : DisplayGrid.i
+
+# target to preprocess a source file
+DisplayGrid.cpp.i:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.i
+.PHONY : DisplayGrid.cpp.i
+
+DisplayGrid.s: DisplayGrid.cpp.s
+
+.PHONY : DisplayGrid.s
+
+# target to generate assembly for a file
+DisplayGrid.cpp.s:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.s
+.PHONY : DisplayGrid.cpp.s
+
+DisplayGridItem.obj: DisplayGridItem.cpp.obj
+
+.PHONY : DisplayGridItem.obj
+
+# target to build an object file
+DisplayGridItem.cpp.obj:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj
+.PHONY : DisplayGridItem.cpp.obj
+
+DisplayGridItem.i: DisplayGridItem.cpp.i
+
+.PHONY : DisplayGridItem.i
+
+# target to preprocess a source file
+DisplayGridItem.cpp.i:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.i
+.PHONY : DisplayGridItem.cpp.i
+
+DisplayGridItem.s: DisplayGridItem.cpp.s
+
+.PHONY : DisplayGridItem.s
+
+# target to generate assembly for a file
+DisplayGridItem.cpp.s:
+	$(MAKE) -f CMakeFiles\rpi_touch.dir\build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.s
+.PHONY : DisplayGridItem.cpp.s
+
 Texture.obj: Texture.cpp.obj
 
 .PHONY : Texture.obj
@@ -215,6 +269,12 @@ help:
 	@echo ... Button.obj
 	@echo ... Button.i
 	@echo ... Button.s
+	@echo ... DisplayGrid.obj
+	@echo ... DisplayGrid.i
+	@echo ... DisplayGrid.s
+	@echo ... DisplayGridItem.obj
+	@echo ... DisplayGridItem.i
+	@echo ... DisplayGridItem.s
 	@echo ... Texture.obj
 	@echo ... Texture.i
 	@echo ... Texture.s

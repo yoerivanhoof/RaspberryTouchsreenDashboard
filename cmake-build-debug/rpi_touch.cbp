@@ -92,6 +92,18 @@
 		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.h">
 			<Option target="rpi_touch"/>
 		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGrid.cpp">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGrid.h">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGridItem.cpp">
+			<Option target="rpi_touch"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGridItem.h">
+			<Option target="rpi_touch"/>
+		</Unit>
 		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.cpp">
 			<Option target="rpi_touch"/>
 		</Unit>
@@ -102,6 +114,18 @@
 			<Option target="rpi_touch"/>
 		</Unit>
 		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/lazy.ttf">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/touch_down.png">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/touch_motion.png">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/touch_up.png">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake/FindSDL2.cmake">

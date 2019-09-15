@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rpi_touch.dir/main.cpp.o"
   "CMakeFiles/rpi_touch.dir/Texture.cpp.o"
   "CMakeFiles/rpi_touch.dir/Button.cpp.o"
+  "CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.o"
+  "CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.o"
   "rpi_touch.pdb"
   "rpi_touch"
 )

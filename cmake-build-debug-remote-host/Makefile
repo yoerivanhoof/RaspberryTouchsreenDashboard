@@ -150,6 +150,60 @@ Button.cpp.s:
 	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/Button.cpp.s
 .PHONY : Button.cpp.s
 
+DisplayGrid.o: DisplayGrid.cpp.o
+
+.PHONY : DisplayGrid.o
+
+# target to build an object file
+DisplayGrid.cpp.o:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.o
+.PHONY : DisplayGrid.cpp.o
+
+DisplayGrid.i: DisplayGrid.cpp.i
+
+.PHONY : DisplayGrid.i
+
+# target to preprocess a source file
+DisplayGrid.cpp.i:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.i
+.PHONY : DisplayGrid.cpp.i
+
+DisplayGrid.s: DisplayGrid.cpp.s
+
+.PHONY : DisplayGrid.s
+
+# target to generate assembly for a file
+DisplayGrid.cpp.s:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.s
+.PHONY : DisplayGrid.cpp.s
+
+DisplayGridItem.o: DisplayGridItem.cpp.o
+
+.PHONY : DisplayGridItem.o
+
+# target to build an object file
+DisplayGridItem.cpp.o:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.o
+.PHONY : DisplayGridItem.cpp.o
+
+DisplayGridItem.i: DisplayGridItem.cpp.i
+
+.PHONY : DisplayGridItem.i
+
+# target to preprocess a source file
+DisplayGridItem.cpp.i:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.i
+.PHONY : DisplayGridItem.cpp.i
+
+DisplayGridItem.s: DisplayGridItem.cpp.s
+
+.PHONY : DisplayGridItem.s
+
+# target to generate assembly for a file
+DisplayGridItem.cpp.s:
+	$(MAKE) -f CMakeFiles/rpi_touch.dir/build.make CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.s
+.PHONY : DisplayGridItem.cpp.s
+
 Texture.o: Texture.cpp.o
 
 .PHONY : Texture.o
@@ -216,6 +270,12 @@ help:
 	@echo "... Button.o"
 	@echo "... Button.i"
 	@echo "... Button.s"
+	@echo "... DisplayGrid.o"
+	@echo "... DisplayGrid.i"
+	@echo "... DisplayGrid.s"
+	@echo "... DisplayGridItem.o"
+	@echo "... DisplayGridItem.i"
+	@echo "... DisplayGridItem.s"
 	@echo "... Texture.o"
 	@echo "... Texture.i"
 	@echo "... Texture.s"

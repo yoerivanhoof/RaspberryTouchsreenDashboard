@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/TheRiverVan/CLionProjects/rpi-touch/Button.cpp" "C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir/Button.cpp.obj"
+  "C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGrid.cpp" "C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir/DisplayGrid.cpp.obj"
+  "C:/Users/TheRiverVan/CLionProjects/rpi-touch/DisplayGridItem.cpp" "C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir/DisplayGridItem.cpp.obj"
   "C:/Users/TheRiverVan/CLionProjects/rpi-touch/Texture.cpp" "C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir/Texture.cpp.obj"
   "C:/Users/TheRiverVan/CLionProjects/rpi-touch/main.cpp" "C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir/main.cpp.obj"
   )
