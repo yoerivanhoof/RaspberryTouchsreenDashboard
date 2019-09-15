@@ -1,3 +1,0 @@
-C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rpi_touch.dir
-C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/TheRiverVan/CLionProjects/rpi-touch/cmake-build-debug/CMakeFiles/rebuild_cache.dir
