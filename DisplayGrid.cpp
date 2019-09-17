@@ -8,67 +8,43 @@
 
 
 void DisplayGrid::render() {
-    std::vector<std::vector<int>> matrix;
-    matrix.resize(this->rows, std::vector<int>(this->coloms, 0));
-    for (int row = 0; row < this->rows; row++) {
-        for (int colomn = 0; colomn < this->coloms; colomn++) {
-            int tempcolom = colomn;
-            int temprow = row;
-            while (matrix[temprow][tempcolom] != 0) {
-                tempcolom++;
-                if (tempcolom >= this->coloms) {
-                    tempcolom = 0;
-                    temprow++;
-                }
-            }
 
-                if (row * this->coloms + colomn < displayItems.size()) {
-                int xpos = 0;
-                int ypos = 0;
-                if (colomn == 0) {
-                    xpos = tempcolom * 800 / this->coloms;
-                } else {
-                    xpos = tempcolom * 800 / this->coloms + (this->coloms * this->space / this->coloms - 3) * tempcolom;
-                }
-
-                if (row == 0) {
-                    ypos = temprow * 480 / this->rows;
-                } else {
-                    ypos = temprow * 480 / this->rows + (this->rows * this->space / this->rows - 3) * temprow;
-                }
-
-                int xwidth = 0;
-                if (displayItems[row * this->coloms + colomn]->getGridWidth() == 1) {
-                    xwidth = 800 / this->coloms - this->space;
-                } else {
-                    xwidth = (800 / this->coloms) * displayItems[row * this->coloms + colomn]->getGridWidth() -
-                             this->space;
-                }
-
-                int yheight = 0;
-                if (displayItems[row * this->coloms + colomn]->getGridHeight() == 1) {
-                    yheight = 480 / this->rows - this->space;
-                } else {
-                    yheight = (480 / this->rows) * displayItems[row * this->coloms + colomn]->getGridHeight() -
-                              this->space;
-                }
-
-                displayItems[row * this->coloms + colomn]->render(
-                        xpos,
-                        ypos,
-                        xwidth,
-                        yheight);
-
-                for (int srow = 0; srow < displayItems[row * this->coloms + colomn]->getGridHeight(); srow++) {
-                    for (int scol = 0; scol < displayItems[row * this->coloms + colomn]->getGridWidth(); scol++) {
-                        matrix[temprow + srow][tempcolom + scol] = 1;
-                    }
-                }
-
-            }
-
+    for (auto &displayItem : displayItems) {
+        int xpos = 0;
+        int ypos = 0;
+        if (displayItem->getColomn() == 0) {
+            xpos = displayItem->getColomn() * 800 / this->coloms;
+        } else {
+            xpos = displayItem->getColomn() * 800 / this->coloms +
+                   (this->coloms * this->space / this->coloms - 3) * displayItem->getColomn();
         }
 
+        if (displayItem->getRow() == 0) {
+            ypos = displayItem->getRow() * 480 / this->rows;
+        } else {
+            ypos = displayItem->getRow() * 480 / this->rows +
+                   (this->rows * this->space / this->rows - 3) * displayItem->getRow();
+        }
+
+        int xwidth = 0;
+        if (displayItem->getGridWidth() == 1) {
+            xwidth = 800 / this->coloms - this->space;
+        } else if (displayItem->getGridWidth() + displayItem->getColomn() == this->coloms) {
+            xwidth = (800 / this->coloms) * displayItem->getGridWidth();
+        } else {
+            xwidth = (800 / this->coloms) * displayItem->getGridWidth() - (this->coloms * this->space / this->coloms-1);
+        }
+
+        int yheight = 0;
+        if (displayItem->getGridHeight() == 1) {
+            yheight = 480 / this->rows - this->space;
+        } else if (displayItem->getGridHeight() + displayItem->getRow() == this->rows) {
+            yheight = (480 / this->rows) * displayItem->getGridHeight();
+        } else {
+            yheight = (480 / this->rows) * displayItem->getGridHeight() - this->space;
+        }
+
+        displayItem->render(xpos, ypos, xwidth, yheight);
     }
 }
 

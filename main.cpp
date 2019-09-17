@@ -9,10 +9,12 @@ and may not be redistributed without written permission.*/
 #include <string>
 #include <string.h>
 #include <iostream>
+#include <fstream>
 #include "Texture.h"
 #include "Button.h"
 #include "DisplayGrid.h"
-
+#include "json.h"
+using json = nlohmann::json;
 
 //Starts up SDL and creates window
 bool init();
@@ -35,7 +37,7 @@ SDL_Rect gScreenRect = {0, 0, 800, 480};
 TTF_Font *gFont;
 
 //Scene textures
-DisplayGrid displayGrid = DisplayGrid(3, 3);
+DisplayGrid *displayGrid;
 
 bool init() {
     //Initialization flag
@@ -99,32 +101,47 @@ bool loadMedia() {
     //Loading success flag
     bool success = true;
 
-    gFont = TTF_OpenFont("lazy.ttf", 25);
+    gFont = TTF_OpenFont("./lazy.ttf", 25);
     if (gFont == NULL) {
         SDL_Log("kan lazy nie lade");
     }
 
-    auto* button = new Button(*gRenderer, *gFont, "Kick Fabian", "wget 0.0.0.0:3000/discord/kick/fabian");
-    auto* button2 = new Button(*gRenderer, *gFont, "Kick Pascal", "wget 0.0.0.0:3000/discord/kick/pascal");
-    button->setGridHeight(2);
-    button2->setGridWidth(2);
-    displayGrid.addItem(*button);
-    displayGrid.addItem(*button2);
 
-    displayGrid.addItem(*new Button(*gRenderer, *gFont, "Kick Pascal", "wget 0.0.0.0:3000/discord/kick/pascal"));
+    std::ifstream t("screen.json");
+    std::string jsonstring;
 
+    t.seekg(0, std::ios::end);
+    jsonstring.reserve(t.tellg());
+    t.seekg(0, std::ios::beg);
 
-    displayGrid.addItem(*new Button(*gRenderer, *gFont, "Kick yoeri", "wget 0.0.0.0:3000/discord/kick/yoeri"));
-    displayGrid.addItem(*new Button(*gRenderer, *gFont, "Kick Jeffrey", "wget 0.0.0.0:3000/discord/kick/jeffrey"));
+    jsonstring.assign((std::istreambuf_iterator<char>(t)),
+               std::istreambuf_iterator<char>());
 
+    auto configuration = json::parse(jsonstring);
 
+    displayGrid = new DisplayGrid(configuration["columns"], configuration["rows"]);
+
+    for (auto it : configuration["items"])
+    {
+        std::cout << "value: " << it << '\n';
+        std::string name = it["name"];
+        int colomn = it["column"];
+        int row = it["row"];
+        int width = it["width"];
+        int height = it["height"];
+        std::string command = it["command"];
+
+        displayGrid->addItem(*new Button(*gRenderer,*gFont,name,row,colomn,width,height,command));
+
+    }
 
     return success;
 }
 
 void close() {
 
-    displayGrid.free();
+    displayGrid->free();
+    delete displayGrid;
 
     //Destroy window
     SDL_DestroyRenderer(gRenderer);
@@ -184,7 +201,7 @@ int main(int argc, char *args[]) {
 
                         touchLocation.x = e.tfinger.x * gScreenRect.w;
                         touchLocation.y = e.tfinger.y * gScreenRect.h;
-                        displayGrid.touchDown(touchLocation);
+                        displayGrid->touchDown(touchLocation);
 
                     }
                         //Touch motion
@@ -196,7 +213,7 @@ int main(int argc, char *args[]) {
                     else if (e.type == SDL_FINGERUP) {
                         touchLocation.x = e.tfinger.x * gScreenRect.w;
                         touchLocation.y = e.tfinger.y * gScreenRect.h;
-                        displayGrid.touchUp(touchLocation);
+                        displayGrid->touchUp(touchLocation);
                     }
 
 
@@ -204,10 +221,10 @@ int main(int argc, char *args[]) {
 
 
                 //Clear screen
-                SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+                SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 0xFF);
                 SDL_RenderClear(gRenderer);
 
-                displayGrid.render();
+                displayGrid->render();
 
                 //Update screen
                 SDL_RenderPresent(gRenderer);

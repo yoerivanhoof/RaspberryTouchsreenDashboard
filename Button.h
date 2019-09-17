@@ -9,35 +9,34 @@
 #include "Texture.h"
 #include "DisplayGridItem.h"
 
-class Button: public DisplayGridItem {
+class Button : public DisplayGridItem {
 private:
     Texture text;
-    int x;
-    int y;
-    int w;
-    int h;
+    int x = 0;
+    int y = 0;
+    int w = 0;
+    int h = 0;
     std::string textstring;
     SDL_Color textColor;
     SDL_Color backgroundColor;
     std::string command;
-    SDL_Renderer* renderer;
-    TTF_Font* gfont;
+    SDL_Renderer *renderer;
+    TTF_Font *gfont;
 public:
-    Button(SDL_Renderer &renderer, TTF_Font& font, std::string text, std::string command = "");
-    Button(SDL_Renderer &renderer, TTF_Font& font, int x, int y, std::string text, std::string command = "");
-    Button(SDL_Renderer &renderer, TTF_Font& font, int x, int y, int width, int height, std::string text, std::string command = "");
+    Button(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width = 1, int height = 1,
+           std::string command = "");
+
     ~Button();
-    void render() override ;
-    void render(int x, int y , int w ,int h) override;
 
+    void render(int x, int y, int w, int h) override;
 
-    void free() override ;
+    void free() override;
 
-    bool setText(std::string text,TTF_Font& font, SDL_Color color);
+    bool setText(std::string text, TTF_Font &font, SDL_Color color);
 
-    void touchDown(SDL_Point point) override ;
+    void touchDown(SDL_Point point) override;
 
-    void touchUp(SDL_Point point) override ;
+    void touchUp(SDL_Point point) override;
 };
 
 

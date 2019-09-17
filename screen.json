@@ -1,0 +1,38 @@
+{
+  "rows": 3,
+  "columns": 4,
+  "items": [
+    {
+      "name": "Kick Fabian",
+      "column": 0,
+      "row": 0,
+      "width": 1,
+      "height": 2,
+      "command": "wget 0.0.0.0:3000/discord/kick/fabian -O /dev/null"
+    },
+    {
+      "name": "Kick Jeffrey",
+      "column": 1,
+      "row": 0,
+      "width": 2,
+      "height": 2,
+      "command": "wget 0.0.0.0:3000/discord/kick/jeffrey -O /dev/null"
+    },
+    {
+      "name": "Kick Pascal",
+      "column": 3,
+      "row": 0,
+      "width": 1,
+      "height": 3,
+      "command": "wget 0.0.0.0:3000/discord/kick/pascal -O /dev/null"
+    },
+    {
+      "name": "Big ass button",
+      "column": 0,
+      "row": 2,
+      "width": 3,
+      "height": 1,
+      "command": "echo hoi"
+    }
+  ]
+}

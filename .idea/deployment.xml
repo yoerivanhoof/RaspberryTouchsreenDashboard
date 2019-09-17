@@ -5,12 +5,25 @@
       <paths name="Remote Host (364976f9-50b3-44c7-9484-d4dba4bd51dc)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.lojG6PrtMh" local="$PROJECT_DIR$" />
+            <mapping deploy="\" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-remote-host" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-remote-host" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="pi3 (cf7c52ed-19cb-4698-b3f7-e96cb639c5cd)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.TdnsgjgimQ" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-pi3" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-pi3" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
           </excludedPaths>
         </serverdata>

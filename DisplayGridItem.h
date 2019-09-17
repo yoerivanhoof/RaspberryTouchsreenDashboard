@@ -9,17 +9,43 @@
 #include <SDL_rect.h>
 
 class DisplayGridItem {
-protected:
+private:
     int gridWidth = 1;
     int gritHeight = 1;
+    int row = 0;
+    int colomn = 0;
+protected:
+
 public:
-    virtual void render() = 0;
+    void setGridWidth(int newWidth){
+        this->gridWidth=newWidth;
+    };
+    void setGridHeight(int newHeight){
+        this->gritHeight=newHeight;
+    };
 
-    void setGridWidth(int width);
-    void setGridHeight(int height);
+    int getGridWidth(){
+        return gridWidth;
+    };
+    int getGridHeight(){
+        return gritHeight;
+    };
 
-    int getGridWidth();
-    int getGridHeight();
+    void setRow(int newRow){
+        this->row=newRow;
+    };
+    void setColomn(int newColomn){
+        this->colomn=newColomn;
+    };
+
+    int getRow(){
+        return row;
+    };
+    int getColomn(){
+        return colomn;
+    };
+
+
 
     virtual void render(int x, int y, int w, int h) = 0;
 

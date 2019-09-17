@@ -9,16 +9,13 @@ Button::~Button() = default;
 
 void Button::free() {
     this->text.free();
-
 }
 
 bool Button::setText(std::string text, TTF_Font& font, SDL_Color color) {
     this->textstring = text;
     this->textColor = color;
     this->text.loadFromRenderedText(this->textstring,font, this->textColor);
-
     return true;
-
 }
 
 
@@ -37,18 +34,6 @@ void Button::touchUp(SDL_Point point) {
             system(this->command.c_str());
         }
     }
-}
-
-
-Button::Button(SDL_Renderer &renderer, TTF_Font& font, int x, int y, int width, int height, std::string text,std::string command): Button(renderer, font,x,y,std::move(text),command) {
-    this->w=width;
-    this->h=height;
-}
-
-void Button::render() {
-    int centerx = this->x+this->w/2-text.getWidth()/2;
-    int centery = this->y+this->h/2-text.getHeight()/2;
-    this->text.render(centerx,centery);
 }
 
 void Button::render(int rx, int ry, int rw, int rh) {
@@ -71,16 +56,16 @@ void Button::render(int rx, int ry, int rw, int rh) {
     this->text.render(centerx,centery);
 }
 
-Button::Button(SDL_Renderer &renderer, TTF_Font& font, int x, int y, std::string settext, std::string command):renderer(&renderer),x(x),y(y),command(std::move(command)),gfont(&font) {
+Button::Button(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width, int height,
+               std::string command):renderer(&renderer),command(std::move(command)),gfont(&font) {
+
+    this->setRow(row);
+    this->setColomn(colomn);
+    this->setGridWidth(width);
+    this->setGridHeight(height);
+
     this->text = Texture(renderer);
-    this->setText(settext,font,SDL_Color({255,255,255}));
-
-    this->w=this->text.getWidth();
-    this->h=this->text.getHeight();
+    this->setText(std::move(text),font,SDL_Color({255,255,255}));
     this->backgroundColor = SDL_Color({100,100,100});
+    this->textColor =SDL_Color({255,255,255});
 }
-
-Button::Button(SDL_Renderer &renderer, TTF_Font& font, std::string text, std::string command):Button(renderer,font,0,0,std::move(text),std::move(command)) {
-
-}
-
