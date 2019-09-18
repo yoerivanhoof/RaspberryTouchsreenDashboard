@@ -6,7 +6,7 @@
 #define RPI_TOUCH_BUTTON_H
 
 
-#include "Texture.h"
+#include "../../sdl/Texture.h"
 #include "DisplayGridItem.h"
 
 class Button : public DisplayGridItem {

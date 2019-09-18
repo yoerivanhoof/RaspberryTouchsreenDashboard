@@ -10,10 +10,10 @@ and may not be redistributed without written permission.*/
 #include <string.h>
 #include <iostream>
 #include <fstream>
-#include "Texture.h"
-#include "Button.h"
-#include "DisplayGrid.h"
-#include "json.h"
+#include "sdl/Texture.h"
+#include "Grid/GridItems/Button.h"
+#include "Grid/DisplayGrid.h"
+#include "libs/json.h"
 using json = nlohmann::json;
 
 //Starts up SDL and creates window
