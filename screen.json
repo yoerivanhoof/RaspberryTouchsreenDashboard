@@ -21,12 +21,30 @@
       "type": "button"
     },
     {
-      "name": "Kick Pascal",
+      "name": "Light MAX",
       "column": 3,
       "row": 0,
       "width": 1,
-      "height": 3,
-      "command": "wget 0.0.0.0:3000/discord/kick/pascal -O /dev/null",
+      "height": 1,
+      "command": "sudo bash -c \"echo 255 > /sys/class/backlight/rpi_backlight/brightness\"",
+      "type": "button"
+    },
+    {
+      "name": "Light MID",
+      "column": 3,
+      "row": 1,
+      "width": 1,
+      "height": 1,
+      "command": "sudo bash -c \"echo 100 > /sys/class/backlight/rpi_backlight/brightness\"",
+      "type": "button"
+    },
+    {
+      "name": "Light LOW",
+      "column": 3,
+      "row": 2,
+      "width": 1,
+      "height": 1,
+      "command": "sudo bash -c \"echo 30 > /sys/class/backlight/rpi_backlight/brightness\"",
       "type": "button"
     },
     {

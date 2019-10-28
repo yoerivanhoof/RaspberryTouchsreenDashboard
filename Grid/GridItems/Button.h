@@ -7,9 +7,9 @@
 
 
 #include "../../sdl/Texture.h"
-#include "DisplayGridItem.h"
+#include "DisplayGridTile.h"
 
-class Button : public DisplayGridItem {
+class Button : public DisplayGridTile {
 private:
     Texture text;
     int x = 0;
@@ -18,7 +18,6 @@ private:
     int h = 0;
     std::string textstring;
     SDL_Color textColor;
-    SDL_Color backgroundColor;
     std::string command;
     SDL_Renderer *renderer;
     TTF_Font *gfont;

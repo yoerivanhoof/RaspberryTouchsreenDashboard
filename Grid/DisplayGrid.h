@@ -8,6 +8,7 @@
 
 #include <vector>
 #include "GridItems/Button.h"
+#include "GridItems/DisplayGridTile.h"
 
 class DisplayGrid {
 
@@ -18,7 +19,7 @@ public:
 
 
 
-    void addItem(DisplayGridItem& button);
+    void addItem(DisplayGridTile& button);
     void render();
 
     void touchDown(SDL_Point point);
@@ -31,7 +32,7 @@ private:
     int coloms ;
     int rows ;
     int space = 5;
-    std::vector<DisplayGridItem*> displayItems;
+    std::vector<DisplayGridTile*> displayItems;
 };
 
 

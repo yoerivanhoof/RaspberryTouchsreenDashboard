@@ -20,7 +20,7 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
-add_executable(rpi_touch main.cpp sdl/Texture.cpp sdl/Texture.h Grid/GridItems/Button.cpp Grid/GridItems/Button.h Grid/DisplayGrid.cpp Grid/DisplayGrid.h Grid/GridItems/DisplayGridItem.h libs/json.h Grid/GridItems/Clock.cpp Grid/GridItems/Clock.h Grid/DisplayGridItemType.h)
+add_executable(rpi_touch main.cpp sdl/Texture.cpp sdl/Texture.h Grid/GridItems/Button.cpp Grid/GridItems/Button.h Grid/DisplayGrid.cpp Grid/DisplayGrid.h libs/json.h Grid/GridItems/Clock.cpp Grid/GridItems/Clock.h Grid/GridItems/DisplayGridTile.cpp Grid/GridItems/DisplayGridTile.h)
 
 include_directories(${SDL2_INCLUDE_DIR}
         ${SDL2_IMAGE_INCLUDE_DIR}

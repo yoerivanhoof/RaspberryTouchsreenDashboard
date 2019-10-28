@@ -48,7 +48,7 @@ void DisplayGrid::render() {
     }
 }
 
-void DisplayGrid::addItem(DisplayGridItem &button) {
+void DisplayGrid::addItem(DisplayGridTile &button) {
 
     displayItems.push_back(&button);
 
@@ -63,13 +63,13 @@ void DisplayGrid::touchDown(SDL_Point point) {
 }
 
 void DisplayGrid::touchUp(SDL_Point point) {
-    for (std::vector<DisplayGridItem *>::size_type i = 0; i != displayItems.size(); i++) {
+    for (std::vector<DisplayGridTile *>::size_type i = 0; i != displayItems.size(); i++) {
         displayItems[i]->touchUp(point);
     }
 }
 
 void DisplayGrid::free() {
-    for (std::vector<DisplayGridItem *>::size_type i = 0; i != displayItems.size(); i++) {
+    for (std::vector<DisplayGridTile *>::size_type i = 0; i != displayItems.size(); i++) {
         displayItems[i]->free();
     }
 }

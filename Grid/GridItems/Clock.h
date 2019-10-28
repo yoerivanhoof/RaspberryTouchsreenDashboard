@@ -5,11 +5,10 @@
 #ifndef RPI_TOUCH_CLOCK_H
 #define RPI_TOUCH_CLOCK_H
 
-
-#include "DisplayGridItem.h"
 #include "../../sdl/Texture.h"
+#include "DisplayGridTile.h"
 
-class Clock: public DisplayGridItem {
+class Clock: public DisplayGridTile {
 
     ~Clock();
 
@@ -27,15 +26,9 @@ public:
 
 private:
     Texture text;
-    int x = 0;
-    int y = 0;
-    int w = 0;
-    int h = 0;
     std::string textstring;
     SDL_Color textColor;
-    SDL_Color backgroundColor;
     std::string command;
-    SDL_Renderer *renderer;
     TTF_Font *gfont;
 };
 
