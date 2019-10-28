@@ -14,6 +14,8 @@ and may not be redistributed without written permission.*/
 #include "Grid/GridItems/Button.h"
 #include "Grid/DisplayGrid.h"
 #include "libs/json.h"
+#include "Grid/GridItems/Clock.h"
+
 using json = nlohmann::json;
 
 //Starts up SDL and creates window
@@ -115,23 +117,28 @@ bool loadMedia() {
     t.seekg(0, std::ios::beg);
 
     jsonstring.assign((std::istreambuf_iterator<char>(t)),
-               std::istreambuf_iterator<char>());
+                      std::istreambuf_iterator<char>());
 
     auto configuration = json::parse(jsonstring);
 
     displayGrid = new DisplayGrid(configuration["columns"], configuration["rows"]);
 
-    for (auto it : configuration["items"])
-    {
+    for (auto it : configuration["items"]) {
         std::cout << "value: " << it << '\n';
         std::string name = it["name"];
         int colomn = it["column"];
         int row = it["row"];
         int width = it["width"];
         int height = it["height"];
+        std::string type = it["type"];
         std::string command = it["command"];
 
-        displayGrid->addItem(*new Button(*gRenderer,*gFont,name,row,colomn,width,height,command));
+        if(type == "button") {
+            displayGrid->addItem(*new Button(*gRenderer, *gFont, name, row, colomn, width, height, command));
+        }else if (type == "text"){
+            displayGrid->addItem(*new Clock(*gRenderer, *gFont, name, row, colomn, width, height, command));
+
+        }
 
     }
 

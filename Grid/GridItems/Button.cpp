@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <ctime>
 #include "Button.h"
 
 Button::~Button() = default;
@@ -47,6 +48,7 @@ void Button::render(int rx, int ry, int rw, int rh) {
     rect->y=ry;
     rect->w=rw;
     rect->h=rh;
+
 
     SDL_SetRenderDrawColor(this->renderer,this->backgroundColor.r,this->backgroundColor.g,this->backgroundColor.b,this->backgroundColor.a);
     SDL_RenderFillRect(this->renderer,rect);
