@@ -70,3 +70,5 @@ fabric.properties
 cmake-*
 
 .idea/
+
+screen.json
