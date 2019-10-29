@@ -21,8 +21,7 @@ class Clock: public DisplayGridTile {
     void touchUp(SDL_Point point) override;
 
 public:
-    Clock(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width = 1, int height = 1,
-            std::string command = "");
+    Clock(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width = 1, int height = 1);
 
 private:
     Texture text;

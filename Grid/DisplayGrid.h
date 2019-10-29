@@ -15,11 +15,11 @@ class DisplayGrid {
 
 public:
     ~DisplayGrid() = default;
-    DisplayGrid(int coloms =3, int rows = 4);
 
+    DisplayGrid(int coloms = 3, int rows = 4);
 
+    void addItem(DisplayGridTile &button);
 
-    void addItem(DisplayGridTile& button);
     void render();
 
     void touchDown(SDL_Point point);
@@ -29,10 +29,10 @@ public:
     void free();
 
 private:
-    int coloms ;
-    int rows ;
+    int coloms;
+    int rows;
     int space = 5;
-    std::vector<DisplayGridTile*> displayItems;
+    std::vector<DisplayGridTile *> displayItems;
 };
 
 

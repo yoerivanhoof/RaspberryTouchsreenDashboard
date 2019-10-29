@@ -32,7 +32,8 @@ void DisplayGrid::render() {
         } else if (displayItem->getGridWidth() + displayItem->getColomn() == this->coloms) {
             xwidth = (800 / this->coloms) * displayItem->getGridWidth();
         } else {
-            xwidth = (800 / this->coloms) * displayItem->getGridWidth() - (this->coloms * this->space / this->coloms-1);
+            xwidth = (800 / this->coloms) * displayItem->getGridWidth() -
+                     (this->coloms * this->space / this->coloms - 1);
         }
 
         int yheight = 0;

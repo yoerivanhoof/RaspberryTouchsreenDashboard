@@ -18,34 +18,21 @@ and may not be redistributed without written permission.*/
 
 using json = nlohmann::json;
 
-//Starts up SDL and creates window
 bool init();
 
-//Loads media
 bool loadMedia();
 
-//Frees media and shuts down SDL
 void close();
 
-//The window we'll be rendering to
 SDL_Window *gWindow = NULL;
-
-//The window renderer
 SDL_Renderer *gRenderer = NULL;
-
-//Screen dimensions
 SDL_Rect gScreenRect = {0, 0, 800, 480};
-
 TTF_Font *gFont;
-
-//Scene textures
 DisplayGrid *displayGrid;
 
 bool init() {
-    //Initialization flag
     bool success = true;
 
-    //Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         SDL_Log("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
         success = false;
@@ -63,24 +50,20 @@ bool init() {
             gScreenRect.h = displayMode.h;
         }
 
-        //Create window
         gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 480,
                                    SDL_WINDOW_SHOWN);
         if (gWindow == NULL) {
             SDL_Log("Window could not be created! SDL Error: %s\n", SDL_GetError());
             success = false;
         } else {
-            //Create renderer for window
             gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             if (gRenderer == NULL) {
                 SDL_Log("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
                 success = false;
             } else {
 
-                //Initialize renderer color
                 SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-                //Initialize PNG loading
                 int imgFlags = IMG_INIT_PNG;
                 if (!(IMG_Init(imgFlags) & imgFlags)) {
                     SDL_Log("SDL_image could not initialize! %s\n", IMG_GetError());
@@ -90,58 +73,50 @@ bool init() {
                     printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
                     success = false;
                 }
-
-
             }
         }
     }
-
     return success;
 }
 
 bool loadMedia() {
-    //Loading success flag
     bool success = true;
 
     gFont = TTF_OpenFont("./lazy.ttf", 25);
     if (gFont == NULL) {
-        SDL_Log("kan lazy nie lade");
+        SDL_Log("Can't load lazy.ttf.");
     }
 
-
-    std::ifstream t("screen.json");
-    std::string jsonstring;
+    std::ifstream t("screen.json"); // config file
+    std::string jsonString;
 
     t.seekg(0, std::ios::end);
-    jsonstring.reserve(t.tellg());
+    jsonString.reserve(t.tellg());
     t.seekg(0, std::ios::beg);
 
-    jsonstring.assign((std::istreambuf_iterator<char>(t)),
+    jsonString.assign((std::istreambuf_iterator<char>(t)),
                       std::istreambuf_iterator<char>());
 
-    auto configuration = json::parse(jsonstring);
+    auto configuration = json::parse(jsonString);
 
     displayGrid = new DisplayGrid(configuration["columns"], configuration["rows"]);
 
     for (auto it : configuration["items"]) {
-        std::cout << "value: " << it << '\n';
         std::string name = it["name"];
         int colomn = it["column"];
         int row = it["row"];
         int width = it["width"];
         int height = it["height"];
         std::string type = it["type"];
-        std::string command = it["command"];
 
-        if(type == "button") {
+
+        if (type == "button") {
+            std::string command = it["command"];
             displayGrid->addItem(*new Button(*gRenderer, *gFont, name, row, colomn, width, height, command));
-        }else if (type == "text"){
-            displayGrid->addItem(*new Clock(*gRenderer, *gFont, name, row, colomn, width, height, command));
-
+        } else if (type == "clock") {
+            displayGrid->addItem(*new Clock(*gRenderer, *gFont, name, row, colomn, width, height));
         }
-
     }
-
     return success;
 }
 
@@ -179,9 +154,6 @@ int main(int argc, char *args[]) {
 
             //Touch variables
             SDL_Point touchLocation = {gScreenRect.w / 2, gScreenRect.h / 2};
-
-
-
 
             //While application is running
             while (!quit) {
@@ -222,15 +194,13 @@ int main(int argc, char *args[]) {
                         touchLocation.y = e.tfinger.y * gScreenRect.h;
                         displayGrid->touchUp(touchLocation);
                     }
-
-
                 }
-
 
                 //Clear screen
                 SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 0xFF);
                 SDL_RenderClear(gRenderer);
 
+                //render items in displaygrid
                 displayGrid->render();
 
                 //Update screen
@@ -241,6 +211,5 @@ int main(int argc, char *args[]) {
 
     //Free resources and close SDL
     close();
-
     return 0;
 }

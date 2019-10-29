@@ -28,9 +28,9 @@ void Clock::touchUp(SDL_Point point) {
 
 }
 
-Clock::Clock(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width, int height,
-               std::string command):command(std::move(command)),gfont(&font), DisplayGridTile(renderer, row, colomn, width, height) {
-
+Clock::Clock(SDL_Renderer &renderer, TTF_Font &font, std::string text, int row, int colomn, int width, int height)
+:gfont(&font), DisplayGridTile(renderer, row, colomn, width, height) {
     this->text = Texture(renderer);
     this->textColor =SDL_Color({255,255,255});
 }
+
